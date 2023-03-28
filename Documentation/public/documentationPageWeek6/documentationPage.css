@@ -1,0 +1,12 @@
+#semanticsImg {
+    max-width: 90%;
+    height: 450px;
+    padding-bottom: 1rem;
+    display: block;
+    margin: 0 auto;
+}
+
+.semantics {
+    display: flex;
+    align-items: center;
+}

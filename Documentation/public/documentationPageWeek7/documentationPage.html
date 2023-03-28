@@ -1,0 +1,53 @@
+
+        <h3> 1. SSR vs CSR</h3>
+
+        <p>
+            Server-Side Rendering and Client-Side Rendering are two approaches for rendering web pages.
+        </p>
+            <h3>a) SSR</h3>
+        <p>
+            Time: SSR can provide faster initial load times because the server sends a fully formed HTML response to the client, 
+            which reduces the amount of time required for the browser to render the page.
+            <br>
+            <br>
+            Resources spent: SSR can require more resources on the server side because it needs to render each page request.
+            However, once the page is rendered, the client-side JavaScript can take over and provide interactivity without additional server requests.
+            <br>
+            <br>
+            SEO: SSR can improve SEO because search engine crawlers can easily crawl and index the fully formed HTML response.
+        </p>
+
+        <h3>b) CSR</h3>
+        <p>
+            Time: CSR can provide faster subsequent page loads because the client-side JavaScript can take over and render subsequent
+            pages without additional server requests.
+            <br>
+            <br>
+            Resources spent: CSR can require more resources on the client side because the client needs to download and execute the
+            JavaScript code required to render the page.
+            <br>
+            <br>
+            SEO: CSR can potentially harm SEO because search engine crawlers may not be able to crawl and index the content
+            rendered by client-side JavaScript.
+        </p>
+
+        <h3> 2. How code affects application memory</h3>
+
+        <p>
+            The code of an application can affect its memory usage in various ways like:
+            <br>
+            <br>
+            a) Data Structures - The way data is stored and accessed by an application can have a big impact on its memory usage.
+            <br>
+            b) Memory Allocation - The way memory is allocated and deallocated by an application can also have an impact on its
+               memory usage. For example, if an application frequently allocates and deallocates memory for small objects, it can
+               lead to memory fragmentation and increased memory usage.
+            <br>
+            c) Recursion - Recursive algorithms can cause an application to consume a large amount of memory if they are not implemented
+               carefully. Each recursive call adds a new stack frame to the call stack, which can quickly consume memory if the recursion
+               depth is high.
+            <br>
+            d) Garbage Collection: The way an application handles garbage collection can also impact its memory usage. If an application
+               does not release memory promptly, it can lead to increased memory usage and potentially cause performance issues.
+
+        </p>

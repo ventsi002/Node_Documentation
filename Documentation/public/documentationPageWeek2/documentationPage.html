@@ -1,0 +1,67 @@
+
+        <h3> 1. Scoping</h3>
+        <p>
+            Scope determines the accessibility or visibility of variables to JavaScript.
+            <br>
+            a) Global scope
+            <br>
+            b) Local scope
+            <br>
+            Variables declared outside a function are in the global scope. Global variables can be accessed and changed in any other scope.
+            Variables defined within a function are in local scope and are not accessible in other functions. Each function,
+            when invoked, creates a new scope, therefore variables with the same name can be used in different functions.
+            <br>
+            <br>
+            Use let when you know that the value of a variable will change.
+            <br>
+            Use const for every other variable.
+            <br>
+            Do not use var.
+        </p>
+
+        <h3> 2. Package.JSON</h3>
+        <p>
+            It is a JSON file that lives in the root directory of your project. It holds important information
+            about the project. It contains human-readable metadata about the project as well as functional metadata like the
+            package version number and a list of dependencies required by the application.
+        </p>
+        <img src="../assets/images/package_JSON.png">
+
+        <h3> 3. Callback functions with different syntax</h3>
+        <img src="../assets/images/callback_function.png">
+        <img src="../assets/images/anonymous_callback_function.png">
+        <img src="../assets/images/arrow_callback_function.png">
+
+        <h3> 3. Create a server insntance with Express</h3>
+
+        <p>
+            Assume we already installed express and set up package.json. Then we go in our app.js and import express.
+            <p style="color: rgba(256, 0, 0, 0.6)">
+                import express from "express";
+            </p>
+        </p>
+        
+        <p>
+            After that we create a new instance of the Express framework. 
+            <p style="color: rgba(256, 0, 0, 0.6)">
+                const app = express();
+            </p>
+        </p>
+        
+        <p>
+            Finaly we create a method that starts the server and listens for incoming requests on the specified port.
+            <p style="color: rgba(256, 0, 0, 0.6)">
+                app.listen(8080);
+            </p>
+        </p>
+
+        <p>
+            And in order to actually see something we can make a simple get request which will send a message as a responce.
+            <p style="color: rgba(256, 0, 0, 0.6)">
+                app.get("/", (req, res) => {
+                    <br>
+                    res.send({message: "Hello from express"});
+                    <br>
+                });
+            </p>
+        </p>

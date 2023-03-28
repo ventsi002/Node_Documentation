@@ -1,0 +1,37 @@
+
+        <h3> 1. Commonjs vs. type module in Node.js</h3>
+
+        <p>
+            CommonJS is the original module system used in Node.js. It uses require() to import modules and module.exports to export modules.
+            CommonJS modules are loaded synchronously, which means that the module will be loaded and evaluated before the execution of the code continues.
+            <br>
+            ES modules, on the other hand, use the import statement to import modules and the export keyword to export modules.
+            ES modules are loaded asynchronously, which means that the module is loaded and evaluated only when it is actually needed.
+        </p>
+
+        <h3> 2. What is XSS and how to prevent it</h3>
+
+        <p>
+            XSS (Cross-Site Scripting) is a type of security vulnerability that occurs when an attacker injects malicious code
+            into a web application, which is then executed by unsuspecting users who access the application. This can result in
+            the attacker gaining access to sensitive information, stealing credentials, or performing other malicious actions on behalf
+            of the user.
+            <br>
+            <br>
+            XSS vulnerabilities can be introduced into a web application:
+            <br>
+            <br>
+            a) Input fields - Malicious code can be injected into input fields such as search boxes, comment sections, and contact forms.
+            <br>
+            b) URL parameters - Attackers can append malicious code to URL parameters that are used to display dynamic content on a page.
+            <br>
+            c) Cookies - Malicious code can be injected into cookies, which are then sent to the server with every subsequent request.
+            <br>
+            d) Third-party scripts - Scripts provided by third-party sources such as advertisements, widgets, and plugins can also introduce XSS vulnerabilities.
+            <br>
+            <br>
+            To sanitize user input and prevent XSS attacks, you can use an NPM package called <b>xss</b>.
+            This package provides a set of functions that can be used to sanitize user input and prevent the execution of malicious code. 
+            For example, you can specify which HTML tags and attributes are allowed, and which should be removed.
+        </p>
+    
