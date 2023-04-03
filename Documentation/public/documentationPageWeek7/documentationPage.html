@@ -16,6 +16,35 @@
             <br>
             SEO: SSR can improve SEO because search engine crawlers can easily crawl and index the fully formed HTML response.
         </p>
+        <br>
+        <h3>Here is how I done it in this webpage.</h3>
+        <p>
+            The renderPage function takes in two arguments: page and config.
+            Page is a string containing the HTML content to be rendered on the page.
+            The config object contains variables that will be replaced in the navbar and footer components.
+            The function replaces any instances of the variables in the navbar and footer components with their corresponding values
+            from the config object. Finally, the function returns the concatenated string of navbar, page, and footer.
+        </p>
+
+        <p>
+            The readPage function takes a single argument, pagePath, which is the file path of the HTML page to be read.
+            The function uses fs module's readFileSync function to read the file synchronously and then converts it to a string.
+            The function then returns the string containing the contents of the HTML page.
+        </p>
+        <img src="../assets/images/SSR_1.png" >
+
+        <p>
+            Then we use the readPage function to read the content of the HTML file and store it into a variable.
+            After that we render the HTML page by calling the renderPage function with the variable where we stored the readPage and
+            an object as a second argument.The object contains properties that will be used to replace the corresponding placeholders in the navbar and footer components.
+        </p>
+
+        <img src="../assets/images/SSR_2.png" >
+
+        <p>
+            At the end we sent the page to the client.
+        </p>
+        <img src="../assets/images/SSR_3.png" >
 
         <h3>b) CSR</h3>
         <p>

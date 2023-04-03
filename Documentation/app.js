@@ -102,6 +102,7 @@ app.get("/documentation-week-7", (req, res) => {
 });
 
 
-app.listen(8080);
+const PORT = process.env.PORT || 8080;
+app.listen(PORT, () => console.log("Server is running on port", PORT));
 
 

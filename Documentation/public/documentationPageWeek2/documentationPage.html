@@ -36,32 +36,20 @@
 
         <p>
             Assume we already installed express and set up package.json. Then we go in our app.js and import express.
-            <p style="color: rgba(256, 0, 0, 0.6)">
-                import express from "express";
-            </p>
-        </p>
-        
-        <p>
             After that we create a new instance of the Express framework. 
-            <p style="color: rgba(256, 0, 0, 0.6)">
-                const app = express();
-            </p>
         </p>
+
+        <img src="../assets/images/express.png">
+
         
         <p>
             Finaly we create a method that starts the server and listens for incoming requests on the specified port.
-            <p style="color: rgba(256, 0, 0, 0.6)">
-                app.listen(8080);
-            </p>
         </p>
+
+        <img src="../assets/images/PORT.png">
 
         <p>
             And in order to actually see something we can make a simple get request which will send a message as a responce.
-            <p style="color: rgba(256, 0, 0, 0.6)">
-                app.get("/", (req, res) => {
-                    <br>
-                    res.send({message: "Hello from express"});
-                    <br>
-                });
-            </p>
         </p>
+
+        <img src="../assets/images/express_2.png">
