@@ -1,8 +1,8 @@
 import { Router } from "express"
-const route = Router();
+const router = Router();
 
-route.get("/", (req, res) => {
+router.get("/", (req, res) => {
     res.send(`Hello there, ${req.session.username}`);
 });
 
-export default route
+export default router

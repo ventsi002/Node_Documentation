@@ -3,11 +3,11 @@ const router = Router();
 import bcrypt from "bcrypt"
 import db from "../databases/connection.js"
 
-router.get("/auth/signup", async (req, res) => {
-    const users = await db.all("SELECT * FROM users");
-    console.log(users);
-    res.send({});
-})
+// router.get("/auth/signup", async (req, res) => {
+//     const users = await db.all("SELECT * FROM users");
+//     console.log(users);
+//     res.send({});
+// })
 
 router.post("/auth/signup", async (req, res) => {
     if (!req.body.username || !req.body.password || !req.body.email) {
