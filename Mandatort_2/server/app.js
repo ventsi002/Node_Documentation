@@ -8,6 +8,11 @@ app.use(helmet());
 
 app.use(express.json());
 
+import cors from "cors"
+app.use(cors({
+    credentials: true,
+    origin: true
+}));
 
 import session from "express-session";
 app.use(session({
@@ -26,8 +31,11 @@ app.use("/auth", rateLimit({
 }));
 
 
-import authRouter from "./routers/authRouter.js"
+import authRouter from "./routers/authRouter.js";
 app.use(authRouter);
+
+import loggedIn from "./routers/loggedIn.js";
+app.use(loggedIn);
 
 
 const PORT = process.env.PORT || 8080;
