@@ -4,23 +4,21 @@ const router = Router();
 
 
 router.post('/contact', async (req, res) => {
-    console.log("here");
-    console.log(req.body);
     let testAccount = await nodemailer.createTestAccount();
 
     let transporter = nodemailer.createTransport({
-        host: 'smtp.ethereal.email',
+        host: 'smtp-mail.outlook.com',
         port: 587,
         secure: false,
         auth: {
-            user: testAccount.user,
-            pass: testAccount.pass,
+            user: "ventsi_mandatory@outlook.com",
+            pass: "mandatory123",
         },
     });
 
     let info = await transporter.sendMail({
         from: `${req.body.name} <${req.body.email}>`,
-        to: 'CEO <referi0222@gmail.com>',
+        to: 'CEO <ventsi_mandatory@outlook.com>',
         subject: `${req.body.subject}`,
         text: `${req.body.text}`,
     });
