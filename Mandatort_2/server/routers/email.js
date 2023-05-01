@@ -4,8 +4,6 @@ const router = Router();
 
 
 router.post('/contact', async (req, res) => {
-    let testAccount = await nodemailer.createTestAccount();
-
     let transporter = nodemailer.createTransport({
         host: 'smtp-mail.outlook.com',
         port: 587,
@@ -17,7 +15,7 @@ router.post('/contact', async (req, res) => {
     });
 
     let info = await transporter.sendMail({
-        from: `${req.body.name} <${req.body.email}>`,
+        from: `<${req.body.email}>`,
         to: 'CEO <ventsi_mandatory@outlook.com>',
         subject: `${req.body.subject}`,
         text: `${req.body.text}`,

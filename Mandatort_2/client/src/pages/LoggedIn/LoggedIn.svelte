@@ -16,7 +16,7 @@
 
 <div>
     <h1>{greeting}</h1>
-    <p>Tell me how you feel today.</p>
+    <a href="/contact"><h3>Tell me how you feel today.</h3></a>
 </div>
 
 <style>

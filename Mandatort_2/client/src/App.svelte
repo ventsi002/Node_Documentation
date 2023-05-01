@@ -5,6 +5,7 @@
   import Signup from "./pages/Signup/Signup.svelte";
   import LoggedIn from "./pages/LoggedIn/LoggedIn.svelte";
   import PrivateRoute from "./components/PrivateRoute.svelte";
+  import Contact from "./pages/Contact/Contact.svelte";
   import { user } from "./store/users.js";
 
   function logout() {
@@ -39,6 +40,10 @@
     <Route path="/signup">
       <Link to="/">Home</Link>
       <Signup />
+    </Route>
+
+    <Route path="/contact">
+      <Contact />
     </Route>
 
     <PrivateRoute path="/logged-in" let:location>

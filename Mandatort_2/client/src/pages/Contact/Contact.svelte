@@ -1,32 +1,36 @@
 <script>
+    import { useNavigate, useLocation } from "svelte-navigator";
     import toastr from "toastr";
     import "toastr/build/toastr.min.css";
+    let from;
+    let subject;
+    let text;
 
-    let username;
-    let password;
-    let email;
+    const navigate = useNavigate();
+    const location = useLocation();
 
-    function signup(event) {
+    function sendEmail(event) {
         event.preventDefault();
-
-        fetch("http://localhost:8080/auth/signup", {
+        fetch("http://localhost:8080/contact", {
             method: "POST",
             credentials: "include",
             headers: {
                 "Content-type": "application/json",
             },
             body: JSON.stringify({
-                username: username,
-                password: password,
-                email: email,
+                from: from,
+                subject: subject,
+                text: text,
             }),
         }).then((response) => {
             if (response.status === 200) {
-                window.location.href = "/login";
+                const from =
+                    ($location.state && $location.state.from) ||
+                    window.history.back();
+                navigate(from, { replace: true });
             }
         });
-
-        toastr["success"](" ", "Register successful");
+        toastr["success"]("Message sent!");
 
         toastr.options = {
             closeButton: false,
@@ -53,40 +57,39 @@
         <form>
             <div class="input-div">
                 <input
-                    type="text"
-                    class="username"
-                    placeholder="Username"
-                    id="username"
-                    bind:value={username}
-                />
-            </div>
-            <div class="input-div">
-                <input
-                    type="password"
-                    class="password"
-                    placeholder="Password"
-                    id="password"
-                    bind:value={password}
-                />
-            </div>
-            <div class="input-div">
-                <input
                     type="email"
                     class="email"
                     placeholder="Email"
                     id="email"
-                    bind:value={email}
+                    bind:value={from}
+                />
+            </div>
+            <div class="input-div">
+                <input
+                    type="subject"
+                    class="subject"
+                    placeholder="Subject"
+                    id="subject"
+                    bind:value={subject}
+                />
+            </div>
+            <div class="input-div">
+                <textarea
+                    rows="6"
+                    cols="45"
+                    placeholder="Text"
+                    class="text"
+                    bind:value={text}
                 />
             </div>
 
             <input
                 type="submit"
-                value="Sign up"
+                value="Send"
                 class="submit"
-                id="loginButton"
-                on:click={signup}
+                id="sendButton"
+                on:click={sendEmail}
             />
-            <a href="/login"><p>Already have an account? log in</p></a>
         </form>
     </main>
 </body>
@@ -151,9 +154,5 @@
         font-size: 0.9rem;
         border-radius: 4px;
         border: none;
-    }
-
-    p {
-        text-align: center;
     }
 </style>
